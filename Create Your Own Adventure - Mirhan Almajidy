@@ -1,0 +1,283 @@
+# Mirhan Almajidy 
+# 10,11,24 Due:11:59pm 
+# Den Of Gold 
+
+# Welcome to the game and start of the story   
+
+print("Welcome to the den of gold") 
+print("You find a map while picking berries, You pick it up and open it up.")
+print("As you look at the map it seems to lead to a bunch of gold.") 
+print("As you get home. You think about the map you have.")
+print("Do you go on this Adventure or do you stay? (Adventure/Stay)")
+
+# Get user input 
+# Don't add space after typing in the input 
+# When input is written it will output the path depending on what the input
+
+pathchoice = input("> ")
+
+# If statement work when the output matching the input and it will print out the that path
+# For example: if I inputted "Adventure" it will output the path for "Adventure" 
+# elif work when the the other choice is inputted 
+# For example" If I inputted "Stay" it would go to the elif statement and give me the output
+
+if pathchoice == "Adventure": 
+    print("After a long time of think you decide to go on this adventure. You thought it would be fun to find a bunch of gold.")
+    print("You start to pack up the important supplies that you will need like water, food, a tent and the map.")
+    print("You leave your house and start to walk. After a while of walking you end up in front of two paths.")
+    print("The map tells you to go left. Which way do you go Left or Right? (Left/Right)")
+
+# while True keeps the loop running and if input is correct.
+# It will break and give you the correct output 
+# if the input does not match then it will give the else statement. 
+
+    while True:
+        LeftOrRight = input("> ")
+        if LeftOrRight in ("Left," "Right"):
+            break
+        else:
+            print("Please enter either 'Left' Or 'Right'")
+   
+    if LeftOrRight == "Left": 
+        print ("You decide to go left after walking for a while you enter a forest.")
+        print("After a bit of more walking you come across a fallen baby bird. You look up and see that it has fallen from the nest.")
+        print("Do you help the baby bird and put it back in its nest or keep walking? (Baby Bird/Keep Walking)")
+
+        while True:
+            BabyBirdOrWalk = input("> ")
+            if BabyBirdOrWalk in ("Baby Bird," "Keep Walking"):
+                break
+            else:
+                print("Please enter either: 'Baby Bird' Or 'Keep Walking'")
+        
+
+        if BabyBirdOrWalk == "Baby Bird": 
+            print("You felt bad for the fallen bird and decide to help it.") 
+            print("You put your stuff on the ground and help the baby bird back in its nest")
+            print("While distracted your stuff get taken away by a bear.")
+            print("When you finish putting the bird back in the nest. You turn around and you stuff aren't there.")
+            print("Your disappointed because you can't do anything about it. You keep walking till you reach a open clear area with a pond")
+            print("You decide to settle down in that area. You get hungry. Do you go looking for food or sleep for the night (Food/Sleep)")
+
+            while True: 
+                FoodOrSleep = input ("> ")
+                if FoodOrSleep in ("Food," "Sleep"):
+                    break 
+                else: 
+                    print("Please enter either: 'Food' Or 'Sleep'")
+           
+            if FoodOrSleep == "Food": 
+                print("You decide to look for food. As you get deeper into the forest it gets darker")
+                print("You can't see where you came from and get lost within the forest (Game Over)")
+
+            elif FoodOrSleep == "Sleep": 
+                print ("You decide to go to sleep on the grass. You wake up in the morning")
+                print ("After a while of thinking you decide to go home because you don't have any of your supplies (Game Over)")
+           
+        elif BabyBirdOrWalk == "Keep Walking":
+            print("...You cruel person... How dare you leave that baby bird!!!")
+            print("You keep walking until you get to the end of the forest.")
+            print("Once you reach the end of the forest. you see a open area where you decide to settle down for the night.") 
+            print(" Remember that baby bird you left.. It died because you didn't help it.")
+            print("You walk up the next morning, pack up and check the map. It seems that you need to through a town and over the mountains. ")
+            print("Do you stay in the town and live there, Go to the mountains without buying warm clothing or go to town and buy warm clothing then go to the mountains. (Stay in town/Mountains with warm clothing /Mountains without warm clothing )")
+
+            while True:
+                StayintownOrMountains = input ("> ")
+                if StayintownOrMountains in ("Stay in town", "Mountains without warm clothing", "Mountains with warm clothing"): 
+                    break 
+                else: 
+                    print("Please enter either: 'Stay in town' Or 'Mountains without warm clothing' Or 'Mountains with warm clothing'")
+        
+            if StayintownOrMountains == "Stay in town": 
+                print("You decide that you don't wanna keep going. So you stay in town. (Game Over)")
+
+            elif StayintownOrMountains == "Mountains without warm clothing":
+                print("You decide to go through the town and not pick up any warm clothing nor stock up on food or water")
+                print("As you start walking to the mountains it starts to get a bit chilly. However you keep on walking until your quite far into the mountains.")
+                print("Two path come up. A safe and dangerous path.")
+                print("which path do you choose? (Safe path/Dangerous path?)")
+
+                while True:
+                    SafeorDangerouspath = input("> ")
+                    if SafeorDangerouspath in ("Safe path", "Dangerous path"):
+                        break 
+                    else: 
+                        print("Please enter either: 'Safe path' Or 'Dangerous path'")
+                
+
+                if SafeorDangerouspath == "Safe path": 
+                    print("You have chosen the safe path. You continue on this path you walk and walk and walk and soon your feet get tried")
+                    print("You also start to get cold. After a bit more of walking you sit down on the snow and try to create a fire. ")
+                    print("You try and try and try but can't because you are cold, you hands are cold.") 
+                    print("You decide to sit there in peace till your body freezes. Just like Captain America. YA DIED! (Game Over)")
+
+                elif SafeorDangerouspath == "Dangerous path":
+                    print("You decide to take the challenge and go for the dangerous path. As you keep walk you come across your first challenge. ")
+                    print("You must walk across the bridge with windy conditions. As you take the first step you start walking.")
+                    print("The wind starts to pick up and the bridge starts to move. You take a run for it and before you get to the end of the bridge.")
+                    print("The bridge falls and you fall to your death.(Game Over) YA DIED!")
+                
+            elif StayintownOrMountains == "Mountains with warm clothing": 
+                print("You decide that you are going to buy warm clothing. So you can be warm during the trip on the mountain.")
+                print("You buy the warm clothing and head towards to mountains you walk for a long time.")
+                print("You end up in front of two paths. One of them is the safe path and the other is a dangerous path.")
+                print("Which path do you go through? (Safe/Dangerous)")
+
+                while True: 
+                    SafeorDangerouspath2 = input ("> ") 
+                    if SafeorDangerouspath2 in ("Safe", "Dangerous"):
+                        break 
+                    else: 
+                        print("Please enter either: 'Safe' Or 'Dangerous'")
+                
+                if SafeorDangerouspath2 == "Safe": 
+                    print("You decide to pick the safe path because why not. You keep moving through the mountains seeing wonderful view and walking through soft snow.")
+                    print("After walking for a while you come across a cave which you decide to enter because it had gotten cold and you wanted to warm up.")
+                    print("While sitting down inside the cave. You decide to check the map and see where you must go next. You see that your inside the cave the you need to be in.")
+                    print("You decide to stay seated down. You eat food and drink water.") 
+                    print("After a while you get up and look around the cave. You notice that it's dark.")
+                    print("However even though your in the medieval times it seems you have the latest phone. Which you take out and turn out the flashlight which brights up the whole area.")
+                    print("You walk till you come to 5 different cave openings. You remember that your map says that the gold is in the left and center path.")
+                    print("However it seems like there are five paths Left path, Left center path, Center path, Right Center path and Right path.")
+                    print("Which path do you go through? (Left path/Left center path/Center path/Right center path/Right path.).")
+
+                    while True:
+                        whichpath1 = input("> ")
+                        if whichpath1 in ("Left path", "Left center path", "Center path", "Right center path", "Right path"):
+                         break 
+                        else: 
+                            print("Please enter either: 'Left path' Or 'Left center path' Or 'Center path' Or 'Right center path' Or 'Right path' ")
+            
+
+                    if whichpath1 == "Left path": 
+                        print("You decide to take the left path like the maps says. You walk and walk and walk until you see something glowing. You run towards that glow. ")
+                        print ("You don't stop fast enough and fall into the lava. YA DIED! (Game Over)")
+                        
+                    elif whichpath1 == "Left center path":
+                        print("You decide to go through the left center path. You keep walking for a while and you think that this is the right path. ") 
+                        print("You walk until you see a piece of paper. You pick it up and it says 'Bye, Bye' which then you get eaten by teddy bears. YA DIED! (Game Over)") 
+
+                    elif whichpath1 == "Center path": 
+                        print("You decide to go through the center path like how the map says. You walk and walk and walk until you see something flashing. You run because you think it's the gold that you have come for. ")
+                        print("Once you get there. It looks different as you get closer you see that it's yellow rocks and not the gold you've come from (Game Over)")
+
+                    elif whichpath1 == "Right center path":
+                        print(" You decide to go through the right center path. As you enter your foot hits the triggers a line in which you get sprayed with poison which slowly kills you (Game Over )")
+
+                    elif whichpath1 == "Right path": 
+                        print("You decide to go through the right path. As soon as you enter your foot triggers a line which pulls a leaver and you fall in a pit of snakes.")
+                        print("You get infected with venom and die slowly. YA DIED! (Game Over) ")
+                    
+                elif SafeorDangerouspath2 == "Dangerous": 
+                    print("You chosen the dangerous path. At first there seems to be nothing dangerous about this path. So you keep walking and walking until") 
+                    print("you come across a bridge with windy conditions. Which seem to blow the bridge from left to right. You wait until the wind stops and than get on the bridge.")
+                    print("You start walking on the bridge and the wind starts to blow again. You stop, hang on to the bridge and than when the wind stops. You make a run for it.")
+                    print("Once you get off on the bridge. It falls. You keep walking for a long time until you come across a pack of polar bears which are sound asleep.")
+                    print("You want to go back but can't because the bridge broken.") 
+                    print("Do you run through the snow to avoid them or do you walk slowly to avoid them? (Run/Walk Slowly)")
+
+                    while True: 
+                        RunOrWalkSlowly = input (">") 
+                        if RunOrWalkSlowly in ("Run", "Walk Slowly"):
+                            break
+                        else: 
+                            print("Please enter either: 'Run' Or 'Walk Slowly'")
+                         
+                    
+                    if RunOrWalkSlowly == "Run":
+                        print("You decide to run through the snow while doing so you wake up the polar bears. The polars bears see you and run after you.") 
+                        print("which makes you run even faster and without knowing so you run over a cliff. YA DIED! (Game Over) ")
+
+                    elif RunOrWalkSlowly == "Walk Slowly":
+                        print("You decide to walk slowly through the snow without making a noise. You have crossed the polar bears without waking them up")
+                        print("You keep walking for even longer until you happen to reach a cave.")
+                        print("Do you go inside the cave or keep going up the mountain? (Cave/Keep Going)")
+
+                        while True: 
+                            CaveOrKeepGoing = input("> ")
+                            if CaveOrKeepGoing in ("Cave", "Keep Going"):
+                             break 
+                            else: 
+                                print("Please enter either: 'Cave' Or 'Keep Going'")
+                       
+                    
+                        if CaveOrKeepGoing == "Keep Going": 
+                            print("You decide to keep going up the mountain. You walk and walk and walk. The climate starts to get colder and colder.")
+                            print("At this point you have almost reach the end of the mountain. You check you maps and see that you missed the cave. ")
+                            print("You decide to sit down on ice where it starts to break. You didn't notice that the ice started to break and after a while of sitting down.")
+                            print("The ice breaks and you fall in water. You don't know how to swim so you drown to your death. YA DIED! (Game Over)")
+
+                        elif CaveOrKeepGoing == "Cave":
+                            print("You decide to go inside the cave. Your reasoning its warm and you haven't checked your map in awhile.")
+                            print("When you enter the cave. You decide to check your map and see that you are in the cave that you need to be in. What a coincidence.")
+                            print("You sit down to rest and eat and drink. After a while you get up and look around the cave. You notice that it's dark.")
+                            print("However even though your in the medieval times it seems you have the latest phone. Which you take out and turn out the flashlight which brights up the whole area.")
+                            print("You walk till you come to 5 different cave openings. You remember that your map says that the gold is in the left and center paths.")
+                            print("However it seems like there are five paths Left path, Left center path, Center path, Right Center path and Right path.")
+                            print("Which path do you go through? (Left path/Left center path/Center path/Right center path/Right path.).")
+
+                            while True:
+                                whichpath = input("> ")
+                                if whichpath in ("Left path", "Left center path", "Center path", "Right center path", "Right path"):
+                                    break 
+                                else:
+                                    print("Please enter either: 'Left path' or 'Left center path' or 'Center path' or 'Right center path' or 'Right path'")
+
+                            if whichpath == "Left path": 
+                                print("You decide to take the left path like the maps says. You walk and walk and walk until you see something glowing. You run towards that glow. ")
+                                print("When you get there you see the gold and beside that you see a baby dragon. ")
+                                print("What do you do? Take the gold or Take the baby dragon or Take take both? (Gold/Dragon/Both)")
+
+                                while True: 
+                                    GoldOrDragonOrBoth = input ("> ")
+                                    if GoldOrDragonOrBoth in ("Gold", "Dragon", "Both"):
+                                            break 
+                                    else:
+                                        print("Please enter either: 'Gold' Or 'Dragon' Or 'Both'")
+                        
+                                if GoldOrDragonOrBoth == "Gold": 
+                                    print("...You cruel person... ...You took the gold and left the baby dragon...")
+                                    print("After a few years, you were picking berries in your garden when out of nowhere. A full grown dragon comes and destroys your town. ")
+                                    print("Everything that you once owned and loved was up in flames now. ")
+                                    print("The dragon got revenge for what you did to it those years ago.") 
+                                    print("THANKS FOR PLAYING!!!")
+
+                                elif GoldOrDragonOrBoth == "Dragon":
+                                    print("You saw the baby dragon and it melted your heart. Instead of taking the gold, you take the baby dragon and you raise it like your own child.")
+                                    print("THANKS FOR PLAYING!!!")
+
+                                elif GoldOrDragonOrBoth == "Both": 
+                                    print("You saw the gold and the baby dragon. You decide to take both. The gold helps you in making your town better and you also raise the dragon.")
+                                    print("Everything goes well. THANKS FOR PLAYING!!!")
+   
+                            elif whichpath == "Left center path":
+                                print("You decide to go through the left center path. You keep walking for a while and you think that this is the right path. ") 
+                                print("You walk until you see a piece of paper. You pick it up and it says 'Bye,Bye' which is when a bunch of arrows come at you and hit you. YA DIED! (Game Over)") 
+
+                            elif whichpath == "Center path": 
+                                print("You decide to go through the center path like how the map says. You walk and walk and walk until you see something flashing. You run because you think it's the gold that you have come for. ")
+                                print("Once you get there. It looks different as you get closer you see that its a bomb with gold foil on it. It explodes. YA DIED! (Game Over)")
+
+                            elif whichpath == "Right center path":
+                                print(" You decide to go through the right center path. As you enter your foot hits the triggers a line in which you gets you lit by fire. YA DIED!(Game Over )")
+
+                            elif whichpath == "Right path": 
+                                print("You decide to go through the right path. As soon as you enter you foot triggers a line which pulls a leaver and you fall in a pit of snakes.")
+                                print("Which choke you till you die. YA DIED! (Game Over) ")
+
+    elif LeftOrRight == "Right": 
+        print("You decide to go right after walking for a while you come across a river.")
+        print("There is no way to go around the river. So you have to swim through it.")
+        print("You swim through the river and not knowing it was infested by alligators")
+        print("You get eaten by alligators. YA DIED! (Game Over)")
+    
+elif pathchoice == "Stay": 
+    print("After a while of think you decide not to go.") 
+    print("You think that the map was placed by children who were just playing around. (Game Over)")
+else: 
+    print("Please enter either: 'Adventure' or 'Stay'.")
+
+
+
+
