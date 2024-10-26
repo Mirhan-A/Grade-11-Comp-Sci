@@ -35,7 +35,7 @@ def game_instruction():
     print("However you can only pick one jar during your turn and vise versa.")
     print("The last candy that is left in any jar and that is picked up either by player 1, 2 or the computer AI will have lost the game")
 
-# 
+
 def player_names(): 
     playing_alone = input("Are you playing alone? (Yes/No) ")
     player1 = input("What is your name? (Player 1) ")
