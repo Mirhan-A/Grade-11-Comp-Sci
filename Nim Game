@@ -1,0 +1,159 @@
+# Mirhan Almajidy 
+# 10/25/24 Due:11:59pm
+# Candy Jars (Nim Game)
+
+"""MODULES
+These are called Modules: 
+Import random: Import a random amount of numbers if you use random.randint
+When outputted a random set of numbers will be given depend on what range you write in the code 
+Like on lines: (71-72, 107)
+Import time: using time.sleep() you can import any time you would like and the computer will wait for that long 
+Like on line: (19)
+"""
+import random
+import time 
+
+# The Welcoming of the game and waiting for the game to start 
+print("Welcome to the game!")
+print("Booting game up...")
+time.sleep(2) 
+
+"""FUNCTIONS
+Functions make it easier to write the code 
+When writing functions you use def and no upper case letters and adding a underscore
+for example: def game_instructions 
+When you are doing writing your code. You call the function by typing in 
+game_instruction()
+this will call the code giving you the output
+"""
+
+# Game Instructions - How the game is played 
+def game_instruction(): 
+    print("Heres how you play this game.")
+    print("You and another person or computer AI will take turns taking candy out of the jar.")
+    print("When it's your turn you can pick any jar you want and take as many candies as you want.") 
+    print("However you can only pick one jar during your turn and vise versa.")
+    print("The last candy that is left in any jar and that is picked up either by player 1, 2 or the computer AI will have lost the game")
+
+# 
+def player_names(): 
+    playing_alone = input("Are you playing alone? (Yes/No) ")
+    player1 = input("What is your name? (Player 1) ")
+    if playing_alone == "Yes": 
+        player2 = "computer"
+    else: 
+        player2 = input("What is your name? (Player 2) ")
+    return player1, player2
+
+"""BRACKET TYPES
+There are different bracket types that were used
+{} - PlaceHolder - This uses f-strings in order to take whats ever put inside the {} and when outputted it would convert 
+[] - They were used for making the code more readable for the computer. 
+When outputted so there was no confusion with the normal () brackets
+"""
+"""NEW WORDS
+\n - New Line - Creates new lines so code becomes cleaner
+Return - Returns whatever is placed beside it 
+for example: return all(candies == 0 for candies in jars) this would return if all the jars had zero candies 
+enumerate - allows for whatever is in the brackets to be looped over and over again
+for i in range & for _ in range - where i is used and _ where i is not used 
+count - counts how many candies there are in the jars 
+f-strings - These are used to with the placeholder {} in order to get where ever was input to be outputted correctly 
+while True - A loop with keeps it running over and over again till the code gets breaks 
+while Not - When the code is false until it becomes turn 
+try - Incase there is something wrong with the output of the code than it will end the game
+ValueError - if something is wrong with the input of the user this will come up instead of continuing 
+"""
+"""New Symbols
+> - Greater than 
+-= - it will take one value and - it with the value before the = sign and print out what ever the output is after the = sign
+^ - Helps when it come to numbers and words
+"""
+def candies_jars():
+    return [random.randint(1,10) for _ in range(6)]
+
+
+def display_jars(jars):
+    print("\nCurrent jars:")
+
+    for i, count in enumerate(jars, start=1):
+        print(f"jars {i}: {count} candies")
+
+def total_candies(jars): 
+    return sum(jars)
+
+def game_over(jars):
+    return all(candies == 0 for candies in jars)
+
+# Nim Sim is what lets the computer win 70% of the time 
+def nim_sim(jars): 
+    result = 0 
+    for candies in jars:
+        result ^= candies 
+    return result 
+    
+def computers_turn(jars):
+    print("Computers turn")
+    current_nim_sum = nim_sim(jars)
+    for i in range(len(jars)):
+        if jars[i] > 0:
+            new_count = jars[i] ^ current_nim_sum 
+            if new_count < jars[i]: 
+                take_candies = jars[i] - new_count
+                print(f"Computer removes {take_candies} candies from jar {i + 1}")
+                jars[i] -= take_candies
+                return 
+    for i in range(len(jars)): 
+        if jars[i] > 0: 
+            candies_to_take = random.randint(1, jars[i])
+            jars[i] -= candies_to_take
+            print(f"Computer removes {candies_to_take} from jar {i + 1}")
+            return 
+
+#Players turn
+def players_turn(player,jars): 
+    while True: 
+        try: 
+            jar_choice = int(input(f"{player}, Which jar would you like to take candy out from (1-6)? ")) - 1 
+            if jar_choice < 0 or jar_choice >= len(jars): 
+                print("Please pick a jar.")
+                continue
+            candies_to_take = int(input(f"How many candies would you like to take for the jar {jar_choice + 1}? "))
+            if candies_to_take < 1 or candies_to_take > jars[jar_choice]: 
+                print("Please take a valid amount of candies.")
+                continue
+            jars[jar_choice] -= candies_to_take 
+            break
+        except ValueError: 
+            print("Enter numbers only. Thank you!")
+
+
+# Need to create the main game. 
+def main_game(): 
+    game_instruction()
+    player1, player2 = player_names()
+    jars = candies_jars()
+
+    while not game_over(jars): 
+        display_jars(jars)
+        print(f"Totals candies left: {total_candies(jars)}.")
+
+        #The first players turn: 
+        players_turn(player1, jars)
+        if game_over(jars): 
+            display_jars(jars)
+            print(f"{player1} has won!")
+            break 
+        
+        if player2 == "computer": 
+            computers_turn(jars)
+
+        else: 
+            players_turn(player2, jars)
+
+        if game_over(jars): 
+            display_jars(jars)
+            print(f"{player2} has won!")
+
+main_game()
+
