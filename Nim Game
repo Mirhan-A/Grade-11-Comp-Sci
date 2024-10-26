@@ -128,7 +128,6 @@ def players_turn(player,jars):
             print("Enter numbers only. Thank you!")
 
 
-# Need to create the main game. 
 def main_game(): 
     game_instruction()
     player1, player2 = player_names()
